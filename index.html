@@ -2,34 +2,102 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=
-  
-, initial-scale=1.0">
-  <title>Document</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <main>
-    <p>Front-end focused developer with strong foundations in HTML, CSS, and JavaScript and hands-on experience building structured, responsive web pages using Git and GitHub workflows. Passionate about creating clean layouts, intuitive user experiences, and well-organized code that/’s easy to maintain and scale.
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-    Background in multimedia design and production brings a unique advantage to development work — combining visual communication, user awareness, and technical structure into cohesive web experiences.
-
-    Particularly interested in front-end development, web design, and user-focused interfaces where design and code work together seamlessly.
-
-    </p>
-    <section>
-      <h1>Education</h1>
+  <header>
+    <nav aria-label="Primary Navigation">
       <ul>
-        <li>job</li>
-        <li>job</li>
-        <li>job</li>
-        </ul>
-      </li>
-        <ol>
+        <li><a href="#about">Bio</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#goals">Goals</a></li>
+        <li><a href="#game">Guessing Game</a></li>
+      </ul>
+    </nav>
 
-        </ol>
+    <section aria-label="Intro">
+      <h1>Hello, I’m <span id="Amity">Your Name</span>.</h1>
+      <p id="welcome-message">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+      <button id="btn-start" type="button">Start Guessing Game</button>
+    </section>
+  </header>
+
+  <main id="main">
+    <section id="about">
+      <h2>Short Bio</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+      </p>
+
+      <h3>Quick Facts</h3>
+      <ul>
+        <li>Lorem ipsum dolor sit amet</li>
+        <li>Consectetur adipiscing elit</li>
+        <li>Sed do eiusmod tempor incididunt</li>
       </ul>
     </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <ul>
+        <li><strong>Lorem Institution:</strong> Lorem ipsum dolor sit amet (20XX–20XX)</li>
+        <li><strong>Certificates:</strong> Consectetur adipiscing elit</li>
+      </ul>
+    </section>
+
+    <section id="experience">
+      <h2>Job Experience</h2>
+
+      <article>
+        <h3>Lorem Role Title — Lorem Company</h3>
+        <p><em>20XX–20XX</em></p>
+        <ul>
+          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+          <li>Sed do eiusmod tempor incididunt ut labore.</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>Lorem Role Title — Lorem Company</h3>
+        <p><em>20XX–20XX</em></p>
+        <ul>
+          <li>Ut enim ad minim veniam, quis nostrud exercitation.</li>
+          <li>Duis aute irure dolor in reprehenderit.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="goals">
+      <h2>Goals</h2>
+      <ol>
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+        <li>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+        <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco.</li>
+      </ol>
+    </section>
+
+    <section id="game" aria-labelledby="game-title">
+      <h2 id="game-title">About Me Guessing Game</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. This game asks
+        five yes/no questions.
+      </p>
+
+      <div id="results" aria-live="polite"></div>
+    </section>
   </main>
+
    <footer>
     <small>© <span id="year"></span> 2026 AGiv Built with HTML, CSS, and JavaScript.</small>
   </footer>
