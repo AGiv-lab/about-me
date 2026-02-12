@@ -33,3 +33,8 @@ Front-end focused developer building responsive, user-friendly web pages with HT
 Targets: Lighthouse Accessibility 90+ and manual keyboard testing on all interactive elements.**
 
 *![Lighthouse score 90](images/lighthouse--Oct.31-24.jpg)
+
+-updates
+    - 02.10.2016
+      - added comment for future code inclusions (button for dark mode,)
+      - adde sixth film guessing question, need to implement score into tally

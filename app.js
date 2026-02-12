@@ -72,3 +72,67 @@ function startGame() {
 if (startBtn) {
   startBtn.addEventListener("click", startGame);
 }
+
+// -----------------------------------------
+// Placeholder for future dark mode button |
+//-----------------------------------------
+
+/*
+----------------------------------
+Question 7 - film guessing game |
+---------------------------------
+*/
+
+// All possible answers
+const possibleAnswers = ["blade runner", "ai", "fifth element", "arrival", "1984", "logan's run", "invitation to hell", "killbots", "Halloween 3", "the lottery"];
+
+// Pick ONE random correct answer from the array
+const randomIndex = Math.floor(Math.random() * possibleAnswers.length);
+const secretAnswer = possibleAnswers[randomIndex];
+
+// Let’s show all possible choices to the user
+const visibleChoices = possibleAnswers.map(films => films[0].toUpperCase() + films.slice(1)).join(", ");
+
+// Max number of attempts
+const maxTries = 6;
+
+let userGotIt = false; // starts at 0
+
+// The guessing loop
+for (let round = 1; round <= maxTries; round++) {
+  const guess = prompt(
+    `I'm thinking of a movie I want to watch, can you guess which one it is from the list? \n\nChoices are: ${visibleChoices}\n\nAttempt ${round} of ${maxTries}:`
+  );
+
+  if (guess === null) {
+    alert("Couldn't choose just one, huh? We'll hold the popcorn for now and We'll give it another shot soon!");
+    break;
+  }
+
+  const cleanedGuess = guess.trim().toLowerCase();
+
+  if (cleanedGuess === "") {
+    alert("Ahhh, I'm definitely in the mood to watch something from the list. This attempt won't count, but make a real guess.");
+    round--;
+    continue;
+  }
+
+  if (cleanedGuess === secretAnswer) {
+    alert(`Correct! The answer is "${secretAnswer}". You got it in ${round} attempt(s)!`);
+    userGotIt = true;
+    score++; // adds a point for a correct answer
+    break;
+  } else {
+    const remaining = maxTries - round;
+    if (remaining > 0) {
+      alert(`"${guess}" isn’t quite it. Give it another shot! (${remaining} attempt(s) left)`);
+    } else {
+      alert(`Looks like that's the end of the road and we've got no more to give... The correct answer was "${secretAnswer}".`);
+    }
+  }
+}
+
+// if (!userGotIt) {
+  console.log(`The film I was thinking of was - "${secretAnswer}".`);
+// }
+
