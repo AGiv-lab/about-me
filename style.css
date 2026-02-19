@@ -106,7 +106,7 @@ body::after {
       transparent 42%
     );
 
-  opacity: 0.95;
+  opacity: 1;
 }
 
 main, header, footer {
@@ -114,11 +114,11 @@ main, header, footer {
 }
 /* ===== Glass Cards ===== */
 .card {
-  background: rgba(15, 20, 60, 0.55); /* dark glass */
+  background: rgba(15, 20, 60, 0.38); /* dark glass */
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 16px;
 
   padding: 1.5rem;
@@ -140,6 +140,12 @@ main, header, footer {
 .card li,
 .card dd {
   color: #e6e8ff;
+}
+
+.card p,
+.card li,
+.card dd {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
 
 .card:hover {
@@ -201,4 +207,10 @@ main, header, footer {
 .btn-primary:focus {
   outline: 3px solid #ffffff;
   outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
 }
