@@ -37,3 +37,15 @@ body {
   padding: 0.4rem 0.6rem;
   border-radius: 6px;
 }
+/* hoover in pink */
+nav-links a:hover {
+  background-color: rgba(255, 105, 180, 0.25); /* pink glow */
+  color: #ffffff;
+}
+
+.nav-links a:focus {
+  outline: 2px solid #7df9ff; /* teal focus ring */
+  outline-offset: 2px;
+  background-color: rgba(125, 249, 255, 0.2);
+}
+
