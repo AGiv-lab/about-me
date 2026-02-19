@@ -107,3 +107,7 @@ body::after {
 
   opacity: 0.95;
 }
+
+main, header, footer {
+  color: #f2f5ff;
+}
