@@ -32,7 +32,7 @@ Front-end focused developer building responsive, user-friendly web pages with HT
 
 Targets: Lighthouse Accessibility 90+ and manual keyboard testing on all interactive elements.**
 
-*![Lighthouse score 90](images/lighthouse--Oct.31-24.jpg)
+*![Lighthouse score 100]()
 
 -updates
     - 02.10.2016

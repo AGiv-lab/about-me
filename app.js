@@ -58,9 +58,9 @@ function startGame() {
   // Exactly five yes/no questions
   if (askYesNoQuestion("According to Neal deGrasse Tyson, is space hotter than you think?", "yes")) score++;
   if (askYesNoQuestion("Do you enjoy films about AI, Future Worlds, and Dystopian themes?", "yes")) score++;
-  if (askYesNoQuestion("Have I worked in media/production roles before?", "yes")) score++;
-  if (askYesNoQuestion("Do I still relish Vaporwave Aesthetics and Memphis-style grahics?", "yes")) score++;
-  if (askYesNoQuestion("Is my favorite background style usually stark white l,with dark text?", "no")) score++; // example “fun” one
+  if (askYesNoQuestion("Do I work in media/production now?", "no")) score++;
+  if (askYesNoQuestion("Do I relish Vaporwave Aesthetics and Memphis-style grahics?", "yes")) score++;
+  if (askYesNoQuestion("Is accessibility important to how I build websites?", "yes")) score++; // example “fun” one
  
   alert(`Thanks for playing, ${displayName}! Your score: ${score}/5`);
 
@@ -72,9 +72,6 @@ function startGame() {
 if (startBtn) {
   startBtn.addEventListener("click", startGame);
 }
-
----------------------------------
-
 /*
 ----------------------------------
 Question 7 - film guessing game |
@@ -129,8 +126,6 @@ for (let round = 1; round <= maxTries; round++) {
     }
   }
 }
-
-// if (!userGotIt) {
+{
   console.log(`The film I was thinking of was - "${secretAnswer}".`);
-// }
-
+ }
