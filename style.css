@@ -1,4 +1,22 @@
-/* style.css - starter file */
+/* style.css */
+* {
+  box-sizing: border-box;
+}
 body {
+  margin: 0;
   font-family: Arial, sans-serif;
+}
+/* ===== Navigation ===== */
+.site-header {
+  background-color: #0b1020; /* dark space blue */
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
 }
