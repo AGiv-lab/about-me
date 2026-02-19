@@ -1,4 +1,37 @@
-/* style.css */
+ ===============================
+   GLOBAL BACKGROUND (VAPORWAVE)
+   =============================== */
+
+body {
+  min-height: 100vh;
+  margin: 0;
+
+  background:
+    /* stars */
+    radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,.6), transparent),
+    radial-gradient(1px 1px at 70% 20%, rgba(255,255,255,.4), transparent),
+    radial-gradient(1px 1px at 40% 80%, rgba(255,255,255,.5), transparent),
+
+    /* pink clouds near top */
+    radial-gradient(circle at 25% 12%, rgba(255,105,180,.25), transparent 60%),
+    radial-gradient(circle at 70% 15%, rgba(255,182,193,.25), transparent 55%),
+
+    /* sunset only bottom ~30% */
+    linear-gradient(
+      to top,
+      rgba(255,140,120,.65) 0%,
+      rgba(255,105,180,.45) 30%,
+      transparent 60%
+    ),
+
+    /* night sky */
+    linear-gradient(to bottom, #0b1024, #050814);
+
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #f2f3ff;
+}
+
 * {
   box-sizing: border-box;
 }
