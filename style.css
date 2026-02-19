@@ -147,3 +147,58 @@ main, header, footer {
     0 14px 40px rgba(255, 105, 180, 0.25),
     0 10px 30px rgba(0, 0, 0, 0.4);
 }
+/* ===== Main Layout Grid ===== */
+.layout {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+/* Two-column layout on wider screens */
+@media (min-width: 800px) {
+  .grid {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  /* Make wide sections span both columns */
+  #experience,
+  #goals,
+  #game,
+  #top-ten {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ===== Buttons ===== */
+.btn {
+  border: none;
+  border-radius: 999px;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 105, 180, 0.9),
+    rgba(125, 249, 255, 0.9)
+  );
+  color: #070b2a;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-primary:focus {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+}
