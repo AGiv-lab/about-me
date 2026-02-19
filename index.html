@@ -1,112 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Me | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Me | Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
-  <a class="skip-link" href="#main">Skip to main content</a>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
 
-  <header>
-    <nav aria-label="Primary Navigation">
-      <ul>
-        <li><a href="#about">Bio</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#goals">Goals</a></li>
-        <li><a href="#game">Guessing Game</a></li>
-      </ul>
-    </nav>
+    <!-- ===== Header / Nav ===== -->
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary Navigation">
+        <a class="brand" href="#main" aria-label="Go to top">
+          🌙 <span class="brand-text">Amity</span>
+        </a>
 
-    <section aria-label="Intro">
-      <h1>Hello, I’m <span id="Amity">Your Name</span>.</h1>
-      <p id="welcome-message">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      </p>
-      
-<!--placeholder for future dark mode button-->
-
-      <button id="btn-start" type="button">Start Guessing Game</button>
-    </section>
-  </header>
-
-  <main id="main">
-    <section id="about">
-      <h2>Short Bio</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat.
-      </p>
-
-      <h3>Quick Facts</h3>
-      <ul>
-        <li>Lorem ipsum dolor sit amet</li>
-        <li>Consectetur adipiscing elit</li>
-        <li>Sed do eiusmod tempor incididunt</li>
-      </ul>
-    </section>
-
-    <section id="education">
-      <h2>Education</h2>
-      <ul>
-        <li><strong>Lorem Institution:</strong> Lorem ipsum dolor sit amet (20XX–20XX)</li>
-        <li><strong>Certificates:</strong> Consectetur adipiscing elit</li>
-      </ul>
-    </section>
-
-    <section id="experience">
-      <h2>Job Experience</h2>
-
-      <article>
-        <h3>Lorem Role Title — Lorem Company</h3>
-        <p><em>20XX–20XX</em></p>
-        <ul>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-          <li>Sed do eiusmod tempor incididunt ut labore.</li>
+        <ul class="nav-links">
+          <li><a href="#about">Bio</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#goals">Goals</a></li>
+          <li><a href="#game">Guessing Game</a></li>
         </ul>
-      </article>
+      </nav>
+    </header>
 
-      <article>
-        <h3>Lorem Role Title — Lorem Company</h3>
-        <p><em>20XX–20XX</em></p>
-        <ul>
-          <li>Ut enim ad minim veniam, quis nostrud exercitation.</li>
-          <li>Duis aute irure dolor in reprehenderit.</li>
-        </ul>
-      </article>
-    </section>
+    <main id="main" class="layout">
+      <!-- ===== Hero Card ===== -->
+      <section class="card hero" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <p class="badge">Vaporwave • Memphis • Mooncore</p>
 
-    <section id="goals">
-      <h2>Goals</h2>
-      <ol>
-        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-        <li>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-        <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco.</li>
-      </ol>
-    </section>
+          <h1 id="hero-title">
+            Hello, I’m <span id="user-name">Your Name</span>.
+          </h1>
 
-    <section id="game" aria-labelledby="game-title">
-      <h2 id="game-title">About Me Guessing Game</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. This game asks
-        five yes/no questions.
-      </p>
+          <p id="welcome-message" class="lead">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
 
-      <div id="results" aria-live="polite"></div>
-    </section>
-  </main>
-    <section>
-      hi
-    </section>
-   <footer>
-    <small>© <span id="year"></span> 2026 AGiv Built with HTML, CSS, and JavaScript.</small>
-  </footer>
+          <div class="hero-actions">
+            <!-- Your JS depends on this ID -->
+            <button id="btn-start" class="btn btn-primary" type="button">
+              Start Guessing Game
+            </button>
 
-  <script src="app.js"></script>
-</body>
+            <a class="btn btn-ghost" href="#game">Jump to Game</a>
+          </div>
+
+          <div class="chips" role="list" aria-label="Interests">
+            <span class="chip" role="listitem">🌌 Space aesthetics</span>
+            <span class="chip" role="listitem">🎵 Vaporwave</span>
+            <span class="chip" role="listitem">🔷 Memphis graphics</span>
+            <span class="chip" role="listitem">♿ Accessibility</span>
+          </div>
+        </div>
+
+        <!-- Decorative Memphis shapes (CSS will draw these) -->
+        <div class="memphis" aria-hidden="true">
+          <span class="shape squiggle"></span>
+          <span class="shape triangle"></span>
+          <span class="shape dots"></span>
+        </div>
+      </section>
+
+      <!-- ===== Main Grid ===== -->
+      <div class="grid">
+        <!-- Bio -->
+        <section id="about" class="card" aria-labelledby="about-title">
+          <h2 id="about-title">Short Bio</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+
+          <h3>Quick Facts</h3>
+          <ul class="bullets">
+            <li>Lorem ipsum dolor sit amet</li>
+            <li>Consectetur adipiscing elit</li>
+            <li>Sed do eiusmod tempor incididunt</li>
+          </ul>
+        </section>
+
+        <!-- Quick Facts Sidebar -->
+        <aside class="card" aria-labelledby="facts-title">
+          <h2 id="facts-title">Quick Facts</h2>
+          <dl class="facts">
+            <div>
+              <dt>Currently learning</dt>
+              <dd>HTML, CSS, JavaScript</dd>
+            </div>
+            <div>
+              <dt>Theme</dt>
+              <dd>Vaporwave + cosmic</dd>
+            </div>
+            <div>
+              <dt>Focus</dt>
+              <dd>Accessible design</dd>
+            </div>
+          </dl>
+        </aside>
+
+        <!-- Education -->
+        <section id="education" class="card" aria-labelledby="education-title">
+          <h2 id="education-title">Education</h2>
+          <ul class="bullets">
+            <li><strong>Lorem Institution:</strong> Lorem ipsum (20XX–20XX)</li>
+            <li><strong>Certificates:</strong> Consectetur adipiscing elit</li>
+          </ul>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience" class="card" aria-labelledby="experience-title">
+          <h2 id="experience-title">Job Experience</h2>
+
+          <article class="job">
+            <h3>Lorem Role Title — Lorem Company</h3>
+            <p class="muted"><em>20XX–20XX</em></p>
+            <ul class="bullets">
+              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+              <li>Sed do eiusmod tempor incididunt ut labore.</li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <h3>Lorem Role Title — Lorem Company</h3>
+            <p class="muted"><em>20XX–20XX</em></p>
+            <ul class="bullets">
+              <li>Ut enim ad minim veniam, quis nostrud exercitation.</li>
+              <li>Duis aute irure dolor in reprehenderit.</li>
+            </ul>
+          </article>
+        </section>
+
+        <!-- Goals -->
+        <section id="goals" class="card" aria-labelledby="goals-title">
+          <h2 id="goals-title">Goals</h2>
+          <ol class="bullets">
+            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+            <li>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+            <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco.</li>
+          </ol>
+        </section>
+
+        <!-- Guessing Game -->
+        <section id="game" class="card game" aria-labelledby="game-title">
+          <h2 id="game-title">About Me Guessing Game</h2>
+          <p class="muted">
+            This game asks five yes/no questions. Answer with
+            <strong>y/n</strong> or <strong>yes/no</strong>.
+          </p>
+
+          <!-- Your JS depends on this ID -->
+          <div id="results" class="results" aria-live="polite">
+            <!-- JS will write the final score here -->
+          </div>
+
+          <p class="hint muted">
+            Tip: The game uses browser prompts, so watch for pop-ups after you click
+            “Start Guessing Game.”
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <small>
+        © <span id="year"></span> 2026 AGiv • Built with HTML, CSS, and JavaScript.
+      </small>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
 </html>

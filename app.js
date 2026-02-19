@@ -25,7 +25,7 @@ function askYesNoQuestion(questionText, correctAnswerYesOrNo) {
 
   const isCorrect = userAnswer === correctAnswerYesOrNo;
 
-  // DEV: comment this out before final submission if requested
+
   console.log(`Q: ${questionText} | Correct? ${isCorrect}`);
 
   if (isCorrect) {
@@ -60,7 +60,7 @@ function startGame() {
   if (askYesNoQuestion("Do you enjoy films about AI, Future Worlds, and Dystopian themes?", "yes")) score++;
   if (askYesNoQuestion("Have I worked in media/production roles before?", "yes")) score++;
   if (askYesNoQuestion("Do I still relish Vaporwave Aesthetics and Memphis-style grahics?", "yes")) score++;
-  if (askYesNoQuestion("Is my favorite background style usually stark with dark text?", "no")) score++; // example “fun” one
+  if (askYesNoQuestion("Is my favorite background style usually stark white l,with dark text?", "no")) score++; // example “fun” one
  
   alert(`Thanks for playing, ${displayName}! Your score: ${score}/5`);
 
@@ -73,9 +73,7 @@ if (startBtn) {
   startBtn.addEventListener("click", startGame);
 }
 
-// -----------------------------------------
-// Placeholder for future dark mode button |
-//-----------------------------------------
+---------------------------------
 
 /*
 ----------------------------------
@@ -84,7 +82,7 @@ Question 7 - film guessing game |
 */
 
 // All possible answers
-const possibleAnswers = ["blade runner", "ai", "fifth element", "arrival", "1984", "logan's run", "invitation to hell", "killbots", "Halloween 3", "the lottery"];
+const possibleAnswers = ["blade runner", "artificial intelligence", "fifth element", "arrival", "1984", "logan's run", "invitation to hell", "killbots", "Halloween 3", "the lottery"];
 
 // Pick ONE random correct answer from the array
 const randomIndex = Math.floor(Math.random() * possibleAnswers.length);
