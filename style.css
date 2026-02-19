@@ -39,6 +39,148 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
 }
+
+/* Stars layer boost */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+
+  /* More stars + slightly brighter */
+  background:
+    radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.9), transparent 60%),
+    radial-gradient(1px 1px at 30% 70%, rgba(255,255,255,0.7), transparent 60%),
+    radial-gradient(2px 2px at 60% 30%, rgba(255,255,255,0.8), transparent 60%),
+    radial-gradient(1px 1px at 80% 60%, rgba(255,255,255,0.75), transparent 60%),
+    radial-gradient(1px 1px at 90% 15%, rgba(255,255,255,0.65), transparent 60%),
+    radial-gradient(2px 2px at 45% 15%, rgba(255,255,255,0.6), transparent 60%),
+    radial-gradient(1px 1px at 55% 85%, rgba(255,255,255,0.7), transparent 60%),
+    radial-gradient(1px 1px at 15% 90%, rgba(255,255,255,0.6), transparent 60%);
+
+  opacity: 0.9;
+}
+
+/* ===============================
+   GLASSMORPHISM CARDS + LAYOUT
+   =============================== */
+
+.layout {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 800px) {
+  .grid {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  /* Wide sections span both columns */
+  #experience,
+  #goals,
+  #game,
+  #top-ten {
+    grid-column: 1 / -1;
+  }
+}
+
+.card {
+  background: rgba(15, 20, 60, 0.38); /* more transparent */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 18px;
+
+  padding: 1.5rem;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+.card h1,
+.card h2,
+.card h3 {
+  color: #ffffff;
+  margin-top: 0;
+}
+
+.card p,
+.card li,
+.card dd {
+  color: rgba(242, 243, 255, 0.92);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.muted {
+  color: rgba(242, 243, 255, 0.72);
+}
+
+/* Hero spacing polish */
+.hero {
+  position: relative;
+}
+
+.badge {
+  margin: 0 0 0.75rem;
+  letter-spacing: 0.5px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.65rem 1.1rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 105, 180, 0.95),
+    rgba(125, 249, 255, 0.95)
+  );
+  color: #070b2a;
+  font-weight: 700;
+}
+
+.btn-primary:hover {
+  opacity: 0.92;
+}
+
+.btn-primary:focus,
+.btn:focus {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+}
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(242, 243, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+/* Reduce motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* ===== Navigation ===== */
 .site-header {
   background-color: #0b1020; /* dark space blue */
