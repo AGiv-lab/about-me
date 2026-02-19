@@ -62,70 +62,120 @@ function startGame() {
   if (askYesNoQuestion("Do I relish Vaporwave Aesthetics and Memphis-style grahics?", "yes")) score++;
   if (askYesNoQuestion("Is accessibility important to how I build websites?", "yes")) score++; // example “fun” one
  
-  alert(`Thanks for playing, ${displayName}! Your score: ${score}/5`);
+  // ---------- Question 6: Number Guess ----------
+  const correctNumber = 7; // <-- change this number to whatever you want
+  let gotNumber = false;
+
+  for (let attempt = 1; attempt <= 4; attempt++) {
+    const rawGuess = prompt(`Question 6: Guess my number (1-10). Attempt ${attempt} of 4:`);
+
+    if (rawGuess === null) {
+      alert("No guess entered — moving on!");
+      break;
+    }
+
+    const guessNum = Number(rawGuess);
+
+    if (Number.isNaN(guessNum)) {
+      alert("That isn't a number. Try again.");
+      attempt--;
+      continue;
+    }
+
+    if (guessNum === correctNumber) {
+      alert("Correct! You got the number!");
+      console.log(`Q6: Correct on attempt ${attempt}`);
+      score++;
+      gotNumber = true;
+      break;
+    } else if (guessNum < correctNumber) {
+      alert("Too low!");
+      console.log(`Q6: Too low (guess=${guessNum})`);
+    } else {
+      alert("Too high!");
+      console.log(`Q6: Too high (guess=${guessNum})`);
+    }
+  }
+
+  if (!gotNumber) {
+    alert(`The correct number was ${correctNumber}.`);
+    console.log(`Q6: User did not guess it. Correct=${correctNumber}`);
+  }
+
+  // ---------- Question 7: Movie Guess (Array) ----------
+  const possibleAnswers = [
+    "blade runner",
+    "artificial intelligence",
+    "fifth element",
+    "arrival",
+    "1984",
+    "logan's run",
+    "invitation to hell",
+    "killbots",
+    "halloween 3",
+    "the lottery",
+  ];
+
+  // Show all possible answers to the user (WITHOUT join)
+  let choicesText = "";
+  for (let i = 0; i < possibleAnswers.length; i++) {
+    const film = possibleAnswers[i];
+    const titled = film[0].toUpperCase() + film.slice(1);
+    choicesText = i === 0 ? titled : choicesText + ", " + titled;
+  }
+
+  let gotMovie = false;
+
+  for (let attempt = 1; attempt <= 6; attempt++) {
+    const guess = prompt(
+      `Question 7: Guess a movie from this list:\n\n${choicesText}\n\nAttempt ${attempt} of 6:`
+    );
+
+    if (guess === null) {
+      alert("No guess entered — moving on!");
+      break;
+    }
+
+    const cleanedGuess = guess.trim().toLowerCase();
+
+    if (cleanedGuess === "") {
+      alert("Blank doesn't count — try again.");
+      attempt--;
+      continue;
+    }
+
+    // Check WITHOUT includes()
+    let isMatch = false;
+    for (let i = 0; i < possibleAnswers.length; i++) {
+      if (cleanedGuess === possibleAnswers[i]) {
+        isMatch = true;
+      }
+    }
+
+    if (isMatch) {
+      alert("Correct! That is one of my possible answers.");
+      console.log(`Q7: Correct guess="${cleanedGuess}"`);
+      score++;
+      gotMovie = true;
+      break;
+    } else {
+      alert("Not on the list — try again!");
+      console.log(`Q7: Wrong guess="${cleanedGuess}"`);
+    }
+  }
+
+  if (!gotMovie) {
+    alert(`Possible correct answers were:\n${choicesText}`);
+    console.log("Q7: User did not guess correctly.");
+  }
+
+ alert(`Thanks for playing, ${displayName}! Your score: ${score}/7`);
 
   if (resultsEl) {
-    resultsEl.textContent = `Final score for ${displayName}: ${score}/5`;
+    resultsEl.textContent = `Final score for ${displayName}: ${score}/7`; 
   }
 }
 
 if (startBtn) {
   startBtn.addEventListener("click", startGame);
 }
-/*
-----------------------------------
-Question 7 - film guessing game |
----------------------------------
-*/
-
-// All possible answers
-const possibleAnswers = ["blade runner", "artificial intelligence", "fifth element", "arrival", "1984", "logan's run", "invitation to hell", "killbots", "Halloween 3", "the lottery"];
-
-// Pick ONE random correct answer from the array
-const randomIndex = Math.floor(Math.random() * possibleAnswers.length);
-const secretAnswer = possibleAnswers[randomIndex];
-
-// Let’s show all possible choices to the user
-const visibleChoices = possibleAnswers.map(films => films[0].toUpperCase() + films.slice(1)).join(", ");
-
-// Max number of attempts
-const maxTries = 6;
-
-let userGotIt = false; // starts at 0
-
-// The guessing loop
-for (let round = 1; round <= maxTries; round++) {
-  const guess = prompt(
-    `I'm thinking of a movie I want to watch, can you guess which one it is from the list? \n\nChoices are: ${visibleChoices}\n\nAttempt ${round} of ${maxTries}:`
-  );
-
-  if (guess === null) {
-    alert("Couldn't choose just one, huh? We'll hold the popcorn for now and We'll give it another shot soon!");
-    break;
-  }
-
-  const cleanedGuess = guess.trim().toLowerCase();
-
-  if (cleanedGuess === "") {
-    alert("Ahhh, I'm definitely in the mood to watch something from the list. This attempt won't count, but make a real guess.");
-    round--;
-    continue;
-  }
-
-  if (cleanedGuess === secretAnswer) {
-    alert(`Correct! The answer is "${secretAnswer}". You got it in ${round} attempt(s)!`);
-    userGotIt = true;
-    score++; // adds a point for a correct answer
-    break;
-  } else {
-    const remaining = maxTries - round;
-    if (remaining > 0) {
-      alert(`"${guess}" isn’t quite it. Give it another shot! (${remaining} attempt(s) left)`);
-    } else {
-      alert(`Looks like that's the end of the road and we've got no more to give... The correct answer was "${secretAnswer}".`);
-    }
-  }
-}
-{
-  console.log(`The film I was thinking of was - "${secretAnswer}".`);
- }
