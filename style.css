@@ -20,3 +20,20 @@ body {
   margin: 0 auto;
   padding: 1rem;
 }
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: #e6e8ff; /* soft light text */
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+}
